@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { FC }from 'react'
+import { FC } from 'react'
 
 interface Routes {
     path: string,
@@ -10,7 +10,7 @@ interface Routes {
 const MainPage = lazy(() => import('../pages/Main'))
 
 
-const getRoutes = (): Array<Routes>=> [{
+const getRoutes = (): Array<Routes> => [{
 	path: '/',
 	getElement: () => <MainPage />
 }]
