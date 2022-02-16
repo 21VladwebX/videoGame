@@ -2,9 +2,8 @@ import { type } from 'os'
 
 type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never
 
-type ObjectsWithMethodsType<T> = T extends {[key: string]: infer R} ? R : never  
+type ObjectsWithMethodsType<T> = T extends { [key: string]: infer R } ? R : never  
 
- 
 type FunctionType<T> = ObjectsWithMethodsType<T> extends (...args: any) => any ? ObjectsWithMethodsType<T> : never
 
 type ObjectWhithFunctionsType<T> = ReturnType<FunctionType<T>> 

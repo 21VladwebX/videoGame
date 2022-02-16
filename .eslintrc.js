@@ -44,6 +44,7 @@ module.exports = {
 		'space-infix-ops': 'error',
 		'space-unary-ops': 'error',
 		'arrow-spacing': 'error',
+		'no-multi-spaces': 'error',
 		'template-curly-spacing': ['error', 'always'],
 		'comma-spacing': ['error', { 'before': false, 'after': true }],
 		'keyword-spacing': ['error', { 
