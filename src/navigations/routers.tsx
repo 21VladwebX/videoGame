@@ -6,26 +6,43 @@ interface Routes {
     getElement: FC 
 }
 
+interface Navigations {
+    path: string,
+    getElement: FC,
+    label: string
+}
 
-const MainPage = lazy(() => import('../pages/Main'))
+const MainPage: FC = lazy(() => import('../pages/Main/Main'))
+const DevlabPage: FC = lazy(() => import('../pages/Devlab/Devlab'))
 
 
-const getRoutes = (): Array<Routes> => [{
+type linkType = {
+    href: string,
+    label: string
+}
+
+
+
+
+const navigationsItems: Array<Navigations> = [{
 	path: '/',
-	getElement: () => <MainPage />
+	getElement: () => <MainPage />,
+	label: 'Main page'
+}, {
+	path: '/devlab',
+	getElement: () => <DevlabPage />,
+	label: 'Devlab'
 }]
 
-export default getRoutes
+export const getRoutes = (): Array<Routes> => navigationsItems.map(({ path, getElement }) => ({
+	path,
+	getElement
+}))
 
 
-// type GenericType<T> = T extends (...args: any[]) => infer R ? R : never
+export const getLinks = (): Array<linkType> => navigationsItems.map(({ path, label }) => ({
+	href: path,
+	label
+}))
 
-
-// const func = (a: number) => ({value: a})
-
-// type funcType = GenericType<typeof func>
-
-// const res: funcType = func(2) 
-
-// console.log(res.value)
 
