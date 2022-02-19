@@ -10,6 +10,7 @@ const App: FC = () => {
 	return (
 		<div className={styles.container}>
 			<Header />
+			
 			<Suspense fallback={<div>Loading...</div>}> 
 				<Routes>
 					{getRoutes().map(({ path, getElement }) => (

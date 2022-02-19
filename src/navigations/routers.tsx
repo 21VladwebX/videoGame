@@ -15,14 +15,10 @@ interface Navigations {
 const MainPage: FC = lazy(() => import('../pages/Main/Main'))
 const DevlabPage: FC = lazy(() => import('../pages/Devlab/Devlab'))
 
-
 type linkType = {
     href: string,
     label: string
 }
-
-
-
 
 const navigationsItems: Array<Navigations> = [{
 	path: '/',
@@ -39,10 +35,7 @@ export const getRoutes = (): Array<Routes> => navigationsItems.map(({ path, getE
 	getElement
 }))
 
-
 export const getLinks = (): Array<linkType> => navigationsItems.map(({ path, label }) => ({
 	href: path,
 	label
 }))
-
-

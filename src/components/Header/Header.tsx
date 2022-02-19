@@ -4,9 +4,7 @@ import { getLinks } from '../../navigations/routers'
 
 import classes from './header.module.css'
 
-
 const Header: FC = () => {
-
 
 	return (
 		<div className={classes.wrapper}>
@@ -20,4 +18,3 @@ const Header: FC = () => {
 }
 
 export default Header
-
